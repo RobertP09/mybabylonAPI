@@ -8,7 +8,12 @@ const UniverseSchema = new mongoose.Schema({
     description: {
         type: String,
         required: true
+    },
+    date : {
+        type:  Date,
+        default: Date.now
     }
 });
 
-module.exports  = mongoose.model('universe', UniverseSchema);
+//export the route ---------------------Name in db , schema that it should use
+module.exports  = mongoose.model('Universes', UniverseSchema);

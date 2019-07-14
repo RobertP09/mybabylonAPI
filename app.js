@@ -2,16 +2,18 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 require('dotenv').config();
 
-// Import routes
-const universeRoute = require('./routes/universes');
-
 //Middleware
-app.use('/universes', universeRoute);
+app.use(bodyParser.json());
+
+// Import routes
+const universeRoute = require( './routes/universes' );
+app.use('/universes', universeRoute );
 
 //index Route
-app.get('/', ( req , res ) => {
+app.get( '/' , ( req , res ) => {
     res.send('index');
 });
 

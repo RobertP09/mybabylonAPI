@@ -16,4 +16,4 @@ const UniverseSchema = new mongoose.Schema({
 });
 
 //export the route ---------------------Name in db , schema that it should use
-module.exports  = mongoose.model('Universes', UniverseSchema);
+module.exports = mongoose.model('Universes', UniverseSchema);

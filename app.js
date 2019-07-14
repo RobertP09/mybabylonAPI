@@ -3,19 +3,20 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-require('dotenv').config();
+const cors = require('cors');
+require('dotenv/config');
 
 //Middleware
-app.use(bodyParser.json());
-
-// Import routes
-const universeRoute = require( './routes/universes' );
-app.use('/universes', universeRoute );
+app.use(cors());
+app.use(bodyParser.json({ type: 'application/json' }));
 
 //index Route
-app.get( '/' , ( req , res ) => {
+app.get('/' , ( req , res ) => {
     res.send('index');
 });
+// Import routes
+const universeRoute = require('./routes/universes');
+app.use('/universes', universeRoute );
 
 //Connect to DB
 mongoose.connect(process.env.DB_CONNECT,
@@ -24,4 +25,4 @@ mongoose.connect(process.env.DB_CONNECT,
     console.log('Connected to DB');
 });
 
-app.listen(3000);
+app.listen(process.env.PORT || 5000);

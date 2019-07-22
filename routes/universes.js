@@ -1,8 +1,10 @@
 const router = require('express').Router();
 const Universe = require('../models/Universe');
+const verify = require('./verifyToken');
+
 
 // Initial route that will render our universes page
-router.get('/', async (req , res) => {
+router.get('/', verify , async (req , res) => {
     try {
         const universes = await Universe.find();
         res.json(universes);
@@ -13,7 +15,7 @@ router.get('/', async (req , res) => {
 
 // Route use to create a universe
 // Create async our post 
-router.post('/', async (req, res) => {
+router.post('/', verify , async (req, res) => {
     // Create an instance of the Universe model
     const universe = new Universe({
         name : req.body.name,
@@ -31,7 +33,7 @@ router.post('/', async (req, res) => {
     }
 });
 //Find specific universe
-router.get('/:universeId' , async (req, res) => {
+router.get('/:universeId' , verify , async (req, res) => {
     try {
         const post = await Universe.findById(req.params.universeId);
         res.json(post);   
@@ -40,7 +42,7 @@ router.get('/:universeId' , async (req, res) => {
     }
 });
 //Delete specific universe
-router.delete('/:universeId', async (req , res) => {
+router.delete('/:universeId',verify , async (req , res) => {
     try {
     const removeUniverse = await Universe.deleteOne({ _id: req.params.universeId });
     res.json(removeUniverse);
@@ -49,7 +51,7 @@ router.delete('/:universeId', async (req , res) => {
     }
 });
 //Update universe
-router.patch('/:universeId', async (req, res) => {
+router.patch('/:universeId', verify , async (req, res) => {
     try {
         const updatedUniverse = await Universe.update(
             {_id: req.params.universeId}, 

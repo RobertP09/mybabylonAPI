@@ -1,7 +1,5 @@
-const express = require('express');
+const router = require('express').Router();
 const Universe = require('../models/Universe');
-
-const router = express();
 
 // Initial route that will render our universes page
 router.get('/', async (req , res) => {

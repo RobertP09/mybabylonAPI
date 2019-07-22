@@ -34,10 +34,12 @@ app.get('/' , ( req , res ) => {
 //Universe routes
 const authRoute = require('./routes/auth');
 const universeRoute = require('./routes/universes');
+const postRoute = require('./routes/posts');
 
 //Route Middleware
 app.use('/api/user', authRoute);
 app.use('/universes', universeRoute );
+app.use('/api/posts', postRoute);
 
 
 /******************************************/ 

@@ -28,7 +28,7 @@ router.post('/register', async (req, res) => {
         const savedUser = await user.save();
         res.send({user: user._id});
     } catch (err) {
-        res.status(400).send(err)
+        res.status(400).send(err);
     }
 });
 
@@ -36,7 +36,7 @@ router.post('/register', async (req, res) => {
 router.post('/login', async (req, res) => {
     // Data Validation - links to validation.js
     const { error } = loginValidation(req.body);
-    if(error) return res.status(400).send(error.details[0].message)
+    if(error) return res.status(400).send(error.details[0].message);
 
     // Check if user already exists
     const user = await User.findOne({email: req.body.email});

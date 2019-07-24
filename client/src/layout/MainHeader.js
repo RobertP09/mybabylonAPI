@@ -1,19 +1,19 @@
-import React, { Component } from 'react'
+import React from 'react';
 
-export class MainHeader extends Component {
+export default class MainHeader extends React.Component {
+    state = {  }
     render() {
         return (
             <header className="navBar">
-                <a href="/" className="logo link"> MyBabylon</a>
-
+                <div className="logo">
+                    <a href="/" className="link">MyBabylon</a>
+                </div>
                 <ul className="linkContainer">
                     <li><a href="/" className="link">Home</a></li>
                     <li><a href="/register" className="link">Register</a></li>
                     <li><a href="/login" className="link">Login</a></li>
                 </ul>
             </header>
-        )
+        );
     }
 }
-
-export default MainHeader;

@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import MainHeader from './layout/MainHeader';
 import MainFooter from './layout/MainFooter';
 import Register from './layout/Register';

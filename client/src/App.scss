@@ -1,27 +1,26 @@
 /* General styles */
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
 * {
     margin: 0;
     padding: 0;
 }
 body, html {
     width: 100%;
-    box-sizing: border-box;
-}
-body {
-    display: flex;
-    flex-direction: column;
     height: 100%;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 .App {
     flex: 1 0 auto;
+    height: 100%;
 }
 /* Colors */
-:root {
-    --main-bg-color: #1565c0;
-    --link-color: #fdd835;
-  }
+    $main-bg-color: #1565c0;
+    $link-color: #fdd835;
 /* General Container styles */
 .container {
+    box-sizing: border-box;
     max-width: 80%;
     width: 100%;
     margin: 0 auto;
@@ -41,7 +40,7 @@ body {
     font-size: 1.3rem;
 }
 .link:hover {
-    color: var(--link-color);
+    color: $link-color;
     text-decoration: none;
     transition: color 0.2s ease-in-out;
 }
@@ -49,7 +48,7 @@ ul .link {
     margin: 0 10px;
 }
 .active {
-    color: var(--link-color);
+    color: $link-color;
 }
 /* General Form Styles */
 .form {
@@ -61,32 +60,39 @@ ul .link {
     box-sizing: border-box;
     width: 350px;
     height: 35px;
-    margin: 10px 0;
+    margin: 10px auto;
     border-radius: 3px;
     border: 1px solid #333;
     padding: 0 5px;
 }
 .submit {
-    background: var(--main-bg-color);
+    background: $main-bg-color;
     color: #fff;
-    border-radius: 3px;
-    border: 3px solid #1565c0;
-    width: auto;
-    height: 50px;
+    border-radius: 40px;
+    width: 350px;
+    height: 70px;
     font-size: 1.8rem;
+    max-width: 450px;
+
+    &:hover {
+        cursor: pointer;
+        background: darken($main-bg-color, 20%);
+        transition: all 0.3s ease-in-out;
+    }
 }
 /* H1 - H6 Styles */
 .title {
     text-align: center;
     font-size: 3rem;
     font-weight: 700;
-    margin: 10px 0;
+    margin: 0;
+    padding: 25px;
     color: #333;
 }
 
 /* Header Styles */
 .navBar {
-    background: var(--main-bg-color);
+    background: $main-bg-color;
     display: flex;
     justify-content: space-between;
     height: 65px;
@@ -101,10 +107,21 @@ ul .link {
 /* Footer Styles */
 
 .footer {
-    background: var(--main-bg-color);
+    background: $main-bg-color;
     width: 100%;
-    height: 50px;
+    height: 60px;
     display: flex;
     flex-flow: row nowrap;
     flex-shrink: 0;
+    align-items: center;
+    position: sticky;
+}
+.copywrite {
+    color: #fff;
+    font-size: 1.2rem;
+    margin: 0 auto;
+}
+.icon {
+    font-size: .8rem;
+    vertical-align: text-top;
 }

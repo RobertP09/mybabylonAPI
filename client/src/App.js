@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import MainHeader from './layout/MainHeader';
+import MainFooter from './layout/MainFooter';
 import Register from './layout/Register';
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <div className="App">
       <MainHeader></MainHeader>
       <Register></Register>
+      <MainFooter></MainFooter>
     </div>
   );
 }

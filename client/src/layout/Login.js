@@ -1,23 +1,13 @@
-import React, { Component } from 'react';
+import React, {Component, Fragment} from 'react';
 
 class Login extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {};
-    }
-
     render() {
-        return(
-        <section className="loginForm">
-            <form>
-                <input name="name">
-                <input name="name">
-                <input name="name">
-                <input>
-            </form>
-        </section>
+        return (
+            <Fragment>
+                <h1>Login</h1>
+            </Fragment>
         );
     }
-};
+}
 
 export default Login;

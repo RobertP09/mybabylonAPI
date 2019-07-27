@@ -36,7 +36,7 @@ const authRoute = require('./routes/auth');
 const universeRoute = require('./routes/universes');
 
 //Route Middleware
-app.use('/user', authRoute);
+app.use('/users', authRoute);
 app.use('/universes', universeRoute );
 
 /******************************************/ 

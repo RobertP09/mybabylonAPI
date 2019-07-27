@@ -65,12 +65,21 @@ ul .link {
     border: 1px solid #333;
     padding: 0 5px;
 }
+.passwordContainer {
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column nowrap;
+}
+.passwordToggle {
+    width: auto;
+    height: auto;
+}
 .submit {
     background: $main-bg-color;
     color: #fff;
     border-radius: 40px;
     width: 350px;
-    height: 70px;
+    height: 60px;
     font-size: 1.8rem;
     max-width: 450px;
 

@@ -99,7 +99,7 @@ class Register extends Component {
                             onKeyUp={this.checkPassword}
                             required
                         />
-                        <input type="submit" value="Submit" className="input submit" disabled/>
+                        <button type="submit" value="Submit" className="input submit" disabled>Submit</button>
                     </form>
                 </section>
             </Fragment>

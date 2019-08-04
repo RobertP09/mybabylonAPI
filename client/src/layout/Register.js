@@ -1,5 +1,5 @@
 import React, { Fragment, Component } from 'react';
-
+import axios from 'axios';
 class Register extends Component {
 
     constructor(props) {
@@ -30,8 +30,8 @@ class Register extends Component {
             email: this.state.email,
             password: this.state.password,
         }
-
-        fetch('http://localhost:5000/users/register', {
+        
+        axios.GET('http://localhost:5000/users/register', {
             method: 'POST',
             headers : { 
                 'Accept' : 'application/json',

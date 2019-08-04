@@ -69,10 +69,38 @@ ul .link {
     margin: 0 auto;
     display: flex;
     flex-flow: column nowrap;
+    position: relative;
 }
 .passwordToggle {
-    width: auto;
-    height: auto;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 15px;
+    top: 14px;
+    appearance: none;
+    cursor: pointer;
+    outline: 0;
+
+    &.showPassword{
+
+        &::after {
+            content: " ";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background:center / contain url('../src/img/hide.png');
+            z-index: 5;
+        }
+    }
+
+    &::after {
+        content: " ";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background:center / contain url('../src/img/view.png');
+        z-index: 5;
+    }
 }
 .submit {
     background: $main-bg-color;
@@ -82,6 +110,7 @@ ul .link {
     height: 60px;
     font-size: 1.8rem;
     max-width: 450px;
+    border: 0;
 
     &:hover {
         cursor: pointer;
